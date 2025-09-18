@@ -11,6 +11,7 @@ namespace testarray
         static void Main(string[] args)
         {
             string[] array = new string[3] { "абв", "нет", "мит" };
+            array[1] = "да";
 
         }
     }
