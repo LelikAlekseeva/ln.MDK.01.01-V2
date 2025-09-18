@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,13 @@ namespace testarray
             int[] array3 = new int[10000];
             for (int i = 0; i < array3.Length; i++)
             {
-                array3[i] = i+1;
+                array3[i] = (i+1)*2;
+            }
+            for (int i = 0; i < array3.Length/2; i++)
+            {
+                int temp = array3[i];
+                array3[i] = array3[array3.Length - 1 - i];
+                array3[array3.Length - 1 - i] = temp;
             }
             Console.Write("[");
             for (int i = 0; i < array3.Length-1; i++)
